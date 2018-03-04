@@ -19,10 +19,6 @@ sudo update-alternatives --config editor
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Copying my vim-init
-mkdir -p ~/.config/nvim/
-rsync shahar-ubuntu.ant.amazon.com:/home/local/ANT/tsiper/.config/nvim/init.vim ~/.config/nvim/
-
 # Adding alias to bashrc and zshrc
 echo "alias vim=nvim" >> ~/.bashrc
 echo "alias vim=nvim" >> ~/.zshrc

@@ -96,7 +96,7 @@ call plug#begin()
 
     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
     nmap ga <Plug>(EasyAlign)
-    Plug 'SirVer/ultisnips' 
+    " Plug 'SirVer/ultisnips' 
     Plug 'honza/vim-snippets'
 
     " Colorscheme Plugins:

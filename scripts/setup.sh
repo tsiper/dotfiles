@@ -1,3 +1,3 @@
 source ~/scripts/zsh.sh
-source ~/scritps/nvim.sh
+source ~/scripts/neovim.sh
 
