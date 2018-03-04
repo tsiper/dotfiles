@@ -22,3 +22,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # Adding alias to bashrc and zshrc
 echo "alias vim=nvim" >> ~/.bashrc
 echo "alias vim=nvim" >> ~/.zshrc
+
+# Installing the packages
+vim +PlugInstall +qall

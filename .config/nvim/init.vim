@@ -51,9 +51,9 @@ call plug#begin()
     " Plug 'beloglazov/vim-online-thesaurus'
 
     " Debugging:
-    Plug 'joonty/vdebug'
-    let g:vdebug_options = {}
-    let g:vdebug_options['watch_window_style'] = 'compact'
+    " Plug 'joonty/vdebug'
+    " let g:vdebug_options = {}
+    " let g:vdebug_options['watch_window_style'] = 'compact'
 
     " Yankring:
     Plug 'vim-scripts/YankRing.vim'
@@ -61,13 +61,13 @@ call plug#begin()
 
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 
-    Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+    " Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
     " " " Syntax Checking And Completion:
     " if has('nvim')
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+        " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     "     let g:deoplete#enable_at_startup = 1
-        Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+        " Plug 'zchee/deoplete-jedi', { 'for': 'python' }
     " else
     "     Plug 'Shougo/deoplete.nvim'
     "     Plug 'roxma/nvim-yarp'
@@ -76,18 +76,18 @@ call plug#begin()
     " endif
 
     " Ale Configuration:
-    Plug 'w0rp/ale', { 'on': 'ALEToggle' }
-    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-    " let g:ale_linters = {'python': ['pylint'] }
-    let g:ale_python_pylint_executable = 'pylint3'   " or 'pylint' for Python 2
-    let g:ale_python_pylint_options = '--rcfile=~/.pylintrc'
-    " The virtualenv detection needs to be disabled.
-    let g:ale_python_pylint_use_global = 0
+    " Plug 'w0rp/ale', { 'on': 'ALEToggle' }
+    " Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+    " " let g:ale_linters = {'python': ['pylint'] }
+    " let g:ale_python_pylint_executable = 'pylint3'   " or 'pylint' for Python 2
+    " let g:ale_python_pylint_options = '--rcfile=~/.pylintrc'
+    " " The virtualenv detection needs to be disabled.
+    " let g:ale_python_pylint_use_global = 0
 
     " Universal Ctags:
     Plug 'majutsushi/tagbar',       {'on': 'TagbarToggle'}
     Plug 'vim-scripts/taglist.vim', {'on': 'TlistToggle'}
-    set tags=./tags
+    " set tags=./tags
 
     " Togglable Panels:
     Plug 'junegunn/vim-easy-align'
