@@ -1,3 +1,3 @@
-source ~/scripts/zsh
-source ~/scritps/nvim
+source ~/scripts/zsh.sh
+source ~/scritps/nvim.sh
 
