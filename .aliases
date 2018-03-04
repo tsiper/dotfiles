@@ -1,0 +1,52 @@
+# Dotfiles repositor
+#
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# fuzzy file-finder shortcuts
+alias fp='fzf --preview "pygmentize -g {}" --height 80%'
+alias ccat="pygmentize -g"
+
+# Neovim
+alias vim='nvim'
+alias view='nvim -r'
+alias vimdiff='nvim -d'
+alias open='xdg-open'
+
+# tmux
+alias ta="tmux attach"
+alias tks="tmux kill-server"
+alias so="source ~/.zshrc"
+alias vz="vim ~/.zshrc"
+
+# Managing remote sessions
+alias remote-p2="ssh -N -L 13390:localhost:3389 tsiper-p2.aka.corp.amazon.com &; sleep 1.5s && remmina -c ~/.remmina/1516016551551.remmina &"
+alias remote-g2="ssh -N -L 13391:localhost:3389 tsiper.aka.corp.amazon.com &; sleep 1.5s && remmina -c ~/.remmina/1516018608798.remmina &"
+alias kill-ssh="pkill-o -u tsiper ssh"
+alias sync-p2="rsync -ahvz --exclude=validation.pkl --exclude=tags --exclude=.idea --exclude=exp --exclude=.git --exclude=__pycache__  ~/Skeleton/src/Skeleton  tsiper@tsiper-p2.aka.corp.amazon.com:/home/tsiper/Skeleton/src"
+alias ssh-p3="ssh -i ~/tsiper-key.pem ubuntu@ec2-54-154-60-150.eu-west-1.compute.amazonaws.com"
+alias sync-p3="rsync -ahvz -e 'ssh -i ~/tsiper-key.pem' --exclude=temp.svg --exclude=validation.pkl --exclude=tags --exclude=.idea --exclude=exp --exclude=.git --exclude='*__pycache__*'  ~/Skeleton/src/Skeleton  ubuntu@ec2-54-154-60-150.eu-west-1.compute.amazonaws.com:/home/ubuntu"
+alias ssh-fleet="ssh -i ~/key/fleet-p3.pem ubuntu@ec2-34-245-28-131.eu-west-1.compute.amazonaws.com"
+alias sync-fleet="rsync -ahvz -e 'ssh -i ~/key/fleet-p3.pem' --exclude=validation.pkl --exclude=tags --exclude=.idea --exclude=exp --exclude=.git --exclude='*__pycache__*'  ~/Skeleton/src/Skeleton  ubuntu@ec2-34-243-166-118.eu-west-1.compute.amazonaws.com:/home/ubuntu"
+alias tunnel-fleet="ssh -i ~/key/fleet-p3.pem -N -L 8098:localhost:8097 ubuntu@ec2-34-245-28-131.eu-west-1.compute.amazonaws.com"
+
+
+# ssh with keyfile
+alias ssk="ssh -i '~/key/fleet-p3.pem'"
+
+# Fleet connections
+alias ssh-p3-2="ssk ubuntu@tsiper-p3-2x.aka.corp.amazon.com"
+alias ssh-p3-16="ssk ubuntu@tsiper-p3-16x.aka.corp.amazon.com"
+
+# Mount the /efs drive using sshfs
+alias mount-efs="sudo sshfs ubuntu@tsiper-p3-2x.aka.corp.amazon.com:/home/ubuntu/efs ~/efs -o allow_other,IdentityFile=/home/local/ANT/tsiper/key/fleet-p3.pem"
+
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Run visdom as sudo in port 80
+alias visdom="sudo $(which python) -m visdom.server -port 80"
+
+# Increase brightness
+function brightness() {
+    xrandr --output HDMI-0 --brightness $1
+    xrandr --output DP-2   --brightness $1
+}
