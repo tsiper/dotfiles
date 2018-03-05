@@ -15,7 +15,6 @@ antigen bundles <<EOBUNDLES
 EOBUNDLES
 
 # Load the theme.
-antigen theme clean
 antigen theme refined
 
 # Tell Antigen that you're done.

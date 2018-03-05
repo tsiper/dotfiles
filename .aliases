@@ -15,8 +15,9 @@ alias open='xdg-open'
 # tmux
 alias ta="tmux attach"
 alias tks="tmux kill-server"
-alias so="source ~/.zshrc"
+alias so="source ~/.zshrc && refresh-antigen"
 alias vz="vim ~/.zshrc"
+alias refresh-antigen="antigen theme clean && antigen theme refined"
 
 # Managing remote sessions
 alias remote-p2="ssh -N -L 13390:localhost:3389 tsiper-p2.aka.corp.amazon.com &; sleep 1.5s && remmina -c ~/.remmina/1516016551551.remmina &"
@@ -31,7 +32,10 @@ alias tunnel-fleet="ssh -i ~/key/fleet-p3.pem -N -L 8098:localhost:8097 ubuntu@e
 
 
 # ssh with keyfile
-alias ssk="ssh -i '~/key/fleet-p3.pem'"
+# alias ssk="ssh -i '~/key/fleet-p3.pem'"
+function ssk () {
+    ssh -i '~/key/fleet-p3.pem' ubuntu@$1.aka.corp.amazon.com
+}
 
 # Fleet connections
 alias ssh-p3-2="ssk ubuntu@tsiper-p3-2x.aka.corp.amazon.com"
